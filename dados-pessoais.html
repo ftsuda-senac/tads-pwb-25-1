@@ -5,12 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nome da pessoa - Dados pessoais</title>
   <style>
-    aside {
-      margin-bottom: 200px;
+    :root {
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h2 {
+      color: magenta;
+      border: 1px solid blue;
+    }
+    .info {
+      border: 3px solid cyan;
+    }
+    .melancia {
+      color: green;
+    }
+    #academica {
+      color: yellow;
     }
   </style>
 </head>
-<body>
+<body style="background-color: black; color: white">
   <article>
     <h1>Nome da pessoa</h1>
     <section>
@@ -34,7 +48,7 @@
         </li>
       </ul>
     </section>
-    <section class="info">
+    <section class="info melancia" id="profissional">
       <h2>Experiências profissionais</h2>
       <ul>
         <li>
@@ -54,7 +68,7 @@
         </li>
       </ul>
     </section>
-    <section class="info">
+    <section class="info" id="academica">
       <h2>Formação acadêmica</h2>
       <ul>
         <li>
@@ -71,7 +85,7 @@
         </li>
       </ul>
     </section>
-    <section class="info">
+    <section class="info" id="conhecimentos">
       <h2>Conhecimentos</h2>
       <ul>
         <li>Java</li>
@@ -82,7 +96,7 @@
         <li>SQL</li>
       </ul>
     </section>
-    <section class="info">
+    <section class="info" id="idiomas">
       <h2>Idiomas</h2>
       <table>
         <thead>
@@ -123,7 +137,7 @@
       <form>
         <div>
           <label for="nomeCompleto">Nome completo</label>
-          <input type="text" id="nomeCompleto" name="nomeCompleto" />
+          <input type="password" id="nomeCompleto" name="nomeCompleto" />
         </div>
         <div>
           <label for="email">E-mail</label>
@@ -133,10 +147,63 @@
           <label for="mensagem">Mensagem</label>
           <textarea id="mensagem" name="mensagem"></textarea>
         </div>
+        <fieldset>
+          <legend>Sexo</legend>
+          <div>
+            <input type="radio" name="sexo" id="radsexof" checked="checked">
+            <label for="radsexof">Feminino</label>
+          </div>
+          <div>
+            <input type="radio" name="sexo" id="radsexom">
+            <label for="radsexom"> Masculino</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Interesses</legend>
+          <div>
+            <input type="checkbox" name="interesse" id="chkinteresse1">
+            <label for="chkinteresse1">Carros</label>
+          </div>
+          <div>
+            <input type="checkbox" name="interesse" id="chkinteresse2">
+            <label for="chkinteresse2">Viagens</label>
+          </div>
+          <div>
+            <input type="checkbox" name="interesse" id="chkinteresse3">
+            <label for="chkinteresse3">Gastronomia</label>
+          </div>
+        </fieldset>
+        <div>
+          <select>
+            <option>Opção 1</option>
+            <option>Opção 2</option>
+            <option>Opção 3</option>
+            <option>Opção 4</option>
+          </select>
+        </div>
+        <div>
+          <label for="selinteresse">Selecione interesses</label>
+          <select name="interesse2" id="selinteresse">
+            <optgroup label="Carros">
+              <option>BMW</option>
+              <option>Audi</option>
+            </optgroup>
+            <optgroup label="Viagens">
+              <option>Nova York</option>
+              <option>Miami</option>
+            </optgroup>
+            <optgroup label="Gastronomia">
+              <option>Comida Japonesa</option>
+              <option>Carnes</option>
+            </optgroup>
+          </select>
+        </div>
+        
         <div>
           <button type="reset">Limpar</button>
           <button type="submit">Enviar mensagem</button>
         </div>
+        <p>Tag &lt;div&gt;</p>
       </form>
     </section>
 
