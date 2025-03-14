@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplos CSS</title>
+  <style>
+    /* depuracao visual */
+    /*
+    * {
+      outline: 1px solid red !important;
+      background-color: rgba(0,0,255,0.15) !important;
+    }
+    */
+    :root { /* equivale ao seletor da tag html */
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+    main {
+      color: green;
+      font-weight: bold;
+    }
+    p {
+      border: 1px solid green;
+      color: red;
+    }
+    #t3 {
+      color: magenta;
+    }
+    .destaque {
+      color: cyan;
+    }
+    .item {
+      color: blue;
+    }
+    [required] {
+      background-color: yellow;
+    }
+    [href^='https'] {
+      color: tomato;
+    }
+    [href^='#'] {
+      color: cadetblue;
+    }
+    a {
+      color: red;
+    }
+    
+    a[title][href^='https'] {
+      border: 3px dashed purple;
+    }
+
+    .item[title] {
+      border: 3px dotted gray;
+    }
+
+    [name='opcao'] + label {
+      color: purple;
+    }
+    [name='opcao']:checked + label {
+      color: green;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <p title="paragrafo">Texto 1</p>
+    <p class="item" title="paragrafo">Texto 2</p>
+    <p class="item" id="t3" title="paragrafo">Texto 3</p>
+    <p class="item destaque" id="t4">Texto 4</p>
+    <hr />
+    <div>
+      <label>Input text required</label><input type="text" required />
+      <br />
+      <label>Input text não required</label><input type="text" />
+    </div>
+    <div>
+      <input type="checkbox" /><label>Input checkbox</label>
+    </div>
+    <div>
+      <input type="radio" name="opcao" id="opcao1" />
+      <label for="opcao1">Input radio 1</label>
+      <input type="radio" name="opcao" id="opcao2" />
+      <label for="opcao2">Input radio 2</label>
+      <input type="radio" name="opcao"id="opcao3" />
+      <label for="opcao3">Input radio 3</label>
+    </div>
+    <a href="https://uol.com.br" title="Texto title">Link para UOL</a>
+    <br />
+    <a href="#t3" title="Texto title 2">Link interno</a>
+  </main>
+</body>
+</html>

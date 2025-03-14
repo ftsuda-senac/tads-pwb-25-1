@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo seletores hierarquia</title>
+  <style>
+    /* Seletor filho */
+    /*
+    .referencia > div {
+      border: 3px solid red;
+      background-color: yellow;
+    }*/
+    /* Seletor descendentes */
+    /*
+    .referencia div {
+      border: 3px solid red;
+      background-color: yellow;
+    }
+    */
+    /* Seletor irmão adjacente */
+    /*
+    .referencia + div {
+      border: 3px solid red;
+      background-color: yellow;
+    }
+    */
+    /* Seletor irmãos subsequentes */
+    .referencia ~ div {
+      border: 3px solid red;
+      background-color: yellow;
+    }
+    
+    /* Selecionar todos os filhos de <main> */
+    /*
+    main:has(.referencia) > * {
+      border: 3px solid red;
+      background-color: yellow;
+    }
+    */
+  </style>
+</head>
+<body>
+  <main>
+    <div>A</div>
+    <div class="referencia">
+      <div>B</div>
+      <div>C</div>
+      <section>
+        <div>D</div>
+        <div>E</div>
+      </section>
+    </div>
+    <div>F</div>
+    <div>G</div>
+  </main>
+</body>
+</html>
