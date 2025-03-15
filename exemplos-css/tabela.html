@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplo nth-child</title>
+  <style>
+    tbody > tr:nth-child(2n+1) {
+      background-color: yellow;
+    }
+    tbody > tr:nth-child(2n) {
+      background-color: bisque;
+    }
+    :is(tr:nth-of-type(3), tr:nth-of-type(5)) {
+      color: red;
+    }
+    th:not(.teste) {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>Valor "n"</th>
+        <th>Coluna 1</th>
+        <th>Coluna 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Linha 1</th>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <th>Linha 2</th>
+        <td>1</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Linha 3</th>
+        <td>2</td>
+        <td>3</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <th>Linha 4</th>
+        <td>3</td>
+        <td>4</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <th class="teste">Linha 5</th>
+        <td>4</td>
+        <td>5</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <th>Linha 6</th>
+        <td>5</td>
+        <td>6</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <th>Linha 7</th>
+        <td>6</td>
+        <td>7</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <th>Linha 8</th>
+        <td>7</td>
+        <td>8</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <th>Linha 9</th>
+        <td>8</td>
+        <td>9</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <th>Linha 10</th>
+        <td>9</td>
+        <td>10</td>
+        <td>10</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

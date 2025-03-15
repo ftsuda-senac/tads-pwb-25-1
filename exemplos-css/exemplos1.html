@@ -57,8 +57,21 @@
     [name='opcao'] + label {
       color: purple;
     }
+    [name='opcao'] + label:hover {
+      outline: 3px solid aquamarine;
+    }
+
     [name='opcao']:checked + label {
       color: green;
+    }
+    input[required]:valid {
+      background-color: green;
+    }
+    input[required]:invalid {
+      background-color: red;
+    }
+    input[placeholder]::placeholder {
+      color: yellow;
     }
 
   </style>
@@ -71,7 +84,8 @@
     <p class="item destaque" id="t4">Texto 4</p>
     <hr />
     <div>
-      <label>Input text required</label><input type="text" required />
+      <label>Input text required</label>
+      <input type="text" placeholder="Preencha algum texto" />
       <br />
       <label>Input text não required</label><input type="text" />
     </div>
