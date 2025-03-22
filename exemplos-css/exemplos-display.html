@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplos display</title>
+  <style>
+    main {
+      width: 95%;
+      background-color: #ccc;
+    }
+    div {
+      border: 3px solid red;
+      height: 100px;
+    }
+    span:has(span) {
+      border: 3px solid blue;
+      height: 100px;
+    }
+    main > span:nth-of-type(2):has(span) {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div>
+      Texto div
+    </div>
+    <span>
+      Texto span <span>span 1</span>
+    </span>
+    <span>
+      Texto span <span>span 2</span>
+    </span>
+    <span>
+      Texto span <span>span 3</span>
+    </span>
+  </main>
+</body>
+</html>

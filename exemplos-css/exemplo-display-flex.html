@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Exemplo display: flex</title>
+  <style>
+    .flex-container {
+      height: 200px;
+      background-color: #ccc;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: baseline;
+      align-content: space-between;
+      gap: 10px;
+    }
+    .item {
+      /* width: 150px; */
+      border: 3px solid red;
+    }
+    .especial {
+      border: 3px solid green;
+      order: -1;
+      flex-grow: 1;
+      align-self: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exemplo display: flex</h1>
+  <main class="flex-container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">
+      <div>Item 4a</div>
+      <div>Item 4b</div>
+      <div>Item 4c</div>
+    </div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+    <div class="item">Item 7</div>
+    <div class="item especial">Item 8</div>
+    <div class="item">Item 9</div>
+    <div class="item">Item 10</div>
+  </main>
+</body>
+
+</html>
