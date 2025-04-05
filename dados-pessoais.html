@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nome da pessoa - Dados pessoais</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
@@ -18,8 +19,11 @@
       font-size: 2rem;
       text-align: center;
     }
-    section {
-      border: 3px solid red;
+
+    article {
+      width: min(900px, 100%);
+      margin-left: auto;
+      margin-right: auto;
     }
 
     #principal {
@@ -29,7 +33,7 @@
     }
 
     #principal > section {
-      width: 34vw;
+      width: min(34vw, 34%);
 
       & > figure {
         margin: 0;
@@ -41,23 +45,26 @@
         }
       }
       & > ul {
+        background-color: #bbb;
+        color: black;
         list-style: none;
         padding: 0;
+        margin-top: 0;
 
         li {
           padding: 5px 5px;
-          border: 1px solid #ccc;
+          border: 1px solid #888;
           border-bottom: none;
 
           &:last-child {
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #888;
           }
         }
       }
     }
 
     #principal > div {
-      width: 66vw;
+      width: min(66vw, 66%);
     }
 
     .info {
@@ -89,7 +96,52 @@
           margin: 2px 0;
         }
       }
+    }
 
+    #conhecimentos > ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      li {
+        border: none;
+        color: black;
+        background-color: cyan;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      li:not(:last-child) {
+          margin: unset;
+        }
+    }
+
+    #idiomas > table {
+      width: 100%;
+      border: none;
+
+      thead {
+        background-color: #444;
+      }
+
+      tbody {
+
+        tr:nth-child(even) {
+          background-color: #888;
+        }
+        tr:nth-child(odd) {
+          background-color: #bbb;
+        }
+
+        tr > td {
+          text-align: center;
+        }
+      }
+    }
+
+    .cor-icone {
+      color: magenta;
+      font-size: 1.5em;
     }
   </style>
 
@@ -104,15 +156,17 @@
           <img src="img/foto.png" alt="Foto da pessoa" title="Foto da pessoa" />
         </figure>
         <ul>
-          <li>email@email.com.br</li>
-          <li>(11) 99999-1234</li>
-          <li>01/01/2000</li>
+          <li><i class="fa-solid fa-envelope cor-icone"></i> email@email.com.br</li>
+          <li><i class="fa-solid fa-phone cor-icone"></i> (11) 99999-1234</li>
+          <li><i class="fa-solid fa-cake-candles cor-icone"></i> 01/01/2000</li>
           <li>
+            <i class="fa-brands fa-linkedin cor-icone"></i>
             <a href="https://linkedin.com/in/pessoa">
               https://linkedin.com/in/pessoa
             </a>
           </li>
           <li>
+            <i class="fa-brands fa-github cor-icone"></i>
             <a href="https://github.com/pessoa">
               https://github.com/pessoa
             </a>
