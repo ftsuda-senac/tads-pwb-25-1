@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplos Javascript</title>
+  <style>
+    .multiplo3 {
+        background-color: purple;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Exemplos lógica</h1>
+    <p>Criar 1000 paragrafos de texto</p>
+    <p>Multiplos de 3 com background-color diferente</p>
+    <button id="executar">Executar</button>
+  </div>
+  <div id="resultado"> </div> <!-- SAÍDA -->
+
+  <script>
+    // Criar 1000 paragrafos de texto
+    // Multiplos de 3 com background-color: cyan
+    function exemplo() {
+        let resultado = '';
+        for (let i = 1; i <= 1000; i++) {
+            if (i % 3 === 0) {
+                resultado = resultado + '<p class="multiplo3">Linha ' + i + '</p>';
+                // OU style inline
+                // resultado = resultado + '<p style="background-color: cyan;">Linha ' + i + '</p>';
+            } else {
+                resultado = resultado + '<p>Linha ' + i + '</p>';
+            }
+        }
+        document.getElementById('resultado').innerHTML = resultado;
+    }
+    document.getElementById("executar").onclick = exemplo; // Sem () da função
+  </script>
+</body>
+</html>

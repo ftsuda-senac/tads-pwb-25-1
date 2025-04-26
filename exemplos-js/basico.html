@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplos Javascript</title>
+</head>
+<body>
+  <div>
+    <h1>Exemplo básico de entrada/saída JS</h1>
+    <label>Entrada</label> <input id="entrada" /> <!-- ENTRADA -->
+    <button id="executar">Executar</button>
+  </div>
+  <div id="resultado"> </div> <!-- SAÍDA -->
+
+  <script>
+    function exemplo() {
+      const entrada = document.getElementById('entrada');
+      document.getElementById('resultado').innerHTML = 'Resultado: <b>' + entrada.value + '</b>';
+    }
+    document.getElementById('executar').onclick = exemplo; // Sem () da função
+  </script>
+</body>
+</html>
