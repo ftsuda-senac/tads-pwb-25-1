@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplos Javascript</title>
+</head>
+<body>
+  <div>
+    <h1>Exemplo tabuada</h1>
+    <label>Qual tabuada vc quer?</label> <input id="entrada" /> <!-- ENTRADA -->
+    <button id="executar">Executar</button>
+  </div>
+  <div id="resultado"> </div> <!-- SAÍDA -->
+
+  <script>
+    // function tabuada() {
+    const tabuada = () => {
+      const multiplicador = parseInt(document.getElementById('entrada').value);
+      let resultado = '';
+      for (let multiplicando = 1; multiplicando <= 10; multiplicando++) {
+        resultado += `<li>${multiplicador} x ${multiplicando} = ${multiplicador*multiplicando}</li>`;
+      }
+      document.getElementById('resultado').innerHTML = `<ul>${resultado}</ul>`;
+    }
+    document.getElementById('executar').onclick = tabuada; // Sem () da função
+  </script>
+</body>
+</html>

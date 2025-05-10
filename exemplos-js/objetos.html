@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplos Javascript</title>
+</head>
+<body>
+  <div>
+    <h1>Exemplo Object</h1>
+    <label>Entrada</label>
+    <select id="entrada"> <!-- ENTRADA -->
+      <option value="entries">Object.entries</option>
+      <option value="keys">Object.keys</option>
+      <option value="values">Object.values</option>
+    </select>
+    <button id="executar">Executar</button>
+  </div>
+  <div id="resultado"> </div> <!-- SAÍDA -->
+
+  <script>
+    function exemplo() {
+      let dados = {
+        nome: 'Fulano da Silva',
+        email: 'fulano@email.com.br',
+        telefone: '11 98765-1234',
+        dataNascimento: '20/05/2000', // ou new Date(2000, 4, 20)
+        linkedIn: 'https://linkedin.com/in/fulano',
+        github: 'https://github.com/fulano',
+        conhecimentos: ['Java', 'JS', 'HTML']
+      }
+      const entrada = document.getElementById('entrada').value;
+      let resultado = '';
+      if (entrada === 'entries') {
+        let parChaveValor = Object.entries(dados);
+        for (let [key, value] of parChaveValor) { // Cada "entry" é um array de 2 elementos
+          resultado += `${key} - ${value}<br />`
+        }
+      } else if (entrada === 'keys') {
+        let keys = Object.keys(dados);
+        for (let k of keys) {
+          resultado += `${k} - ${dados[k]}<br />`
+        }
+      } else if (entrada === 'values') {
+        let values = Object.values(dados);
+        for (let v of values) {
+          resultado += `${v}<br />`
+        }
+      }
+      document.getElementById('resultado').innerHTML = resultado;
+    }
+    document.getElementById('executar').onclick = exemplo; // Sem () da função
+  </script>
+</body>
+</html> 

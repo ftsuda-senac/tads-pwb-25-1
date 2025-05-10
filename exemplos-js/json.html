@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplos Javascript</title>
+</head>
+<body>
+  <div>
+    <h1>Exemplo JSON</h1>
+    <p>Abrir console pelo Developer Tools para ver resultado</p>
+    <button id="executar">Executar</button>
+  </div>
+  <div id="resultado"> </div> <!-- SAÍDA -->
+
+  <script>
+    function exemploJson() {
+      let dados = {
+        nome: 'Fulano da Silva',
+        email: 'fulano@email.com.br',
+        telefone: '11 98765-1234',
+        dataNascimento: new Date(2000, 4, 20),
+        linkedIn: 'https://linkedin.com/in/fulano',
+        github: 'https://github.com/fulano',
+        conhecimentos: ['Java', 'JS', 'HTML']
+      }
+      let json = JSON.stringify(dados);
+      console.log(json);
+      let dados2 = JSON.parse(json);
+      document.getElementById('resultado').innerHTML = `<pre>${json}</pre>`;
+    }
+    document.getElementById('executar').onclick = exemploJson; // Sem () da função
+  </script>
+</body>
+</html>
