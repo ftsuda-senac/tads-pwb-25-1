@@ -1,0 +1,13 @@
+{
+    "nome": "Fulano da Silva",
+    "email": "fulano@email.com.br",
+    "telefone": "11 98765-1234",
+    "dataNascimento": "2000-05-20T03:00:00.000Z",
+    "linkedIn": "https://linkedin.com/in/fulano",
+    "github": "https://github.com/fulano",
+    "conhecimentos": [
+        "Java",
+        "JS",
+        "HTML"
+    ]
+}

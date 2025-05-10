@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nome da pessoa - Dados pessoais</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+    :root {
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: black;
+      color: white;
+    }
+    h1 {
+      font-family: 'Karla';
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    article {
+      width: min(900px, 100%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #principal {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+    }
+
+    #principal > section {
+      width: min(34vw, 34%);
+
+      & > figure {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+
+        & > img {
+          width: 100%;
+        }
+      }
+      & > ul {
+        background-color: #bbb;
+        color: black;
+        list-style: none;
+        padding: 0;
+        margin-top: 0;
+
+        li {
+          padding: 5px 5px;
+          border: 1px solid #888;
+          border-bottom: none;
+
+          &:last-child {
+            border-bottom: 1px solid #888;
+          }
+        }
+      }
+    }
+
+    #principal > div {
+      width: min(66vw, 66%);
+    }
+
+    .info {
+      border: 3px solid cyan;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      padding: 10px;
+
+      h2 {
+        margin-top: 5px;
+        font-size: 1.5rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li:not(:last-child) {
+          margin: 20px 0;
+        }
+
+        h3 {
+          font-weight: bold;
+          margin: 2px 0;
+        }
+
+        p, h4 {
+          color: #ccc;
+          margin: 2px 0;
+        }
+      }
+    }
+
+    #conhecimentos > ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      li {
+        border: none;
+        color: black;
+        background-color: cyan;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      li:not(:last-child) {
+          margin: unset;
+        }
+    }
+
+    #idiomas > table {
+      width: 100%;
+      border: none;
+
+      thead {
+        background-color: #444;
+      }
+
+      tbody {
+
+        tr:nth-child(even) {
+          background-color: #888;
+        }
+        tr:nth-child(odd) {
+          background-color: #bbb;
+        }
+
+        tr > td {
+          text-align: center;
+        }
+      }
+    }
+
+    .cor-icone {
+      color: magenta;
+      font-size: 1.5em;
+    }
+  </style>
+
+</head>
+
+<body>
+  <button id="executar">Carregar dados</button>
+  <article>
+    <h1 id="nome">Nome da pessoa</h1>
+    <div id="principal">
+      <section>
+        <figure>
+          <img src="img/foto.png" alt="Foto da pessoa" title="Foto da pessoa" />
+        </figure>
+        <ul>
+          <li><i class="fa-solid fa-envelope cor-icone"></i> <span id="email"></span></li>
+          <li><i class="fa-solid fa-phone cor-icone"></i> <span id="telefone"></span></li>
+          <li><i class="fa-solid fa-cake-candles cor-icone"></i> <span id="dataNascimento"></span></li>
+          <li>
+            <i class="fa-brands fa-linkedin cor-icone"></i>
+            <a href="https://linkedin.com/in/pessoa" id="linkedin">
+              https://linkedin.com/in/pessoa
+            </a>
+          </li>
+          <li>
+            <i class="fa-brands fa-github cor-icone" id="linkedin"></i>
+            <a href="https://github.com/pessoa">
+              https://github.com/pessoa
+            </a>
+          </li>
+        </ul>
+      </section>
+      <div>
+        <section class="info melancia" id="profissional">
+          <h2>Experiências profissionais</h2>
+          <ul>
+            <li>
+              <h3>Empresa 3</h3>
+              <p>Cargo na empresa 3</p>
+              <p>Desde jan/2020</p>
+            </li>
+            <li>
+              <h3>Empresa 2</h3>
+              <p>Cargo na empresa 2</p>
+              <p>De jan/2010 até dez/2020</p>
+            </li>
+            <li>
+              <h3>Empresa 1</h3>
+              <p>Cargo na empresa 1</p>
+              <p>De jan/2000 até dez/2010</p>
+            </li>
+          </ul>
+        </section>
+        <section class="info" id="academica">
+          <h2>Formação acadêmica</h2>
+          <ul>
+            <li>
+              <h3>Curso 3</h3>
+              <h4>Instituição XPTO</h4>
+            </li>
+            <li>
+              <h3>Curso 2</h3>
+              <h4>Instituição XPTO</h4>
+            </li>
+            <li>
+              <h3>Curso 1</h3>
+              <h4>Instituição XPTO</h4>
+            </li>
+          </ul>
+        </section>
+        <section class="info" id="conhecimentos">
+          <h2>Conhecimentos</h2>
+          <ul>
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Figma</li>
+            <li>SQL</li>
+          </ul>
+        </section>
+        <section class="info" id="idiomas">
+          <h2>Idiomas</h2>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Leitura</th>
+                <th>Escrita</th>
+                <th>Conversação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Inglês</th>
+                <td>Bom</td>
+                <td>Bom</td>
+                <td>Ruim</td>
+              </tr>
+              <tr>
+                <th>Espanhol</th>
+                <td>Bom</td>
+                <td>Bom</td>
+                <td>Bom</td>
+              </tr>
+              <tr>
+                <th>Chinês</th>
+                <td>Bom</td>
+                <td>Bom</td>
+                <td>Fluente</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+  </article>
+  <script>
+    async function carregarDados() {
+      const httpResp = await fetch('http://localhost:8080/api/fulano');
+      if (!httpResp.ok) {
+        alert('ERRO');
+        return;
+      }
+      const dados = await httpResp.json();
+      document.getElementById('nome').textContent = dados.nome;
+      document.getElementById('email').textContent = dados.email;
+      document.getElementById('telefone').textContent = dados.telefone;
+      document.getElementById('dataNascimento').textContent = dados.dataNascimento;
+
+    }
+    document.getElementById('executar').onclick = carregarDados;
+  </script>
+</body>
+
+</html>
