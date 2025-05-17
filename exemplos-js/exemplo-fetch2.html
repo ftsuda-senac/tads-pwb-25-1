@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplos Javascript</title>
+  <style>
+    .dados {
+      background-color: bisque;
+      color: blue;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Exemplo Fetch com async/await</h1>
+    <button id="executar">Executar</button>
+  </div>
+  <div id="resultado" class="dados"> </div> <!-- SAÍDA -->
+  <p style="color: red">Numero: <span id="numeroXpto"></span></p>
+  <p style="background-color: yellow">Data: <span id="dataAbc"></span></p>
+
+  <script>
+    async function requisicaoAssincrona() {
+      const httpResp = await fetch('./dados.json');
+      if (!httpResp.ok) {
+        return;
+      }
+      // RODAR TELA COM EXTENSAO LIVE SERVER DO VSCODE PARA FUNCIONAR
+      const dados = await httpResp.json(); // resolve(dados)
+      const dadosHtml = `<h2>${dados.nome}</h2>
+        <p>${dados.texto}</p>`
+      document.getElementById('resultado').innerHTML = dadosHtml;
+      document.getElementById('numeroXpto').innerHTML = dados.numero;
+      document.getElementById('dataAbc').innerHTML = dados.data;
+
+    }
+
+    document.getElementById('executar').onclick = requisicaoAssincrona; // Sem () da função
+  </script>
+</body>
+</html>

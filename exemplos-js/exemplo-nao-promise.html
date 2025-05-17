@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo Não Promise</title>
+  </head>
+  <body>
+    <div>
+      <h1>Exemplo Não Promise</h1>
+      <button id="executar">Executar</button>
+    </div>
+    <div id="resultado1"></div>
+    <div id="resultado2"></div>
+    <div id="resultado3"></div>
+
+    <script>
+      let contador = 0;
+      let pronto = false;
+
+      function funcaoDemorada() {
+        // Loop demorado
+        let start = new Date().getTime();
+        let end = start;
+        while (end < start + 5000) {
+          end = new Date().getTime();
+        }
+        document.getElementById("resultado3").innerHTML = "MENSAGEM XXXXXXXXXXX";
+      }
+
+      function exemplo() {
+        document.getElementById("resultado2").innerHTML = contador;
+        funcaoDemorada();
+        alert('Terminou funcao demorada');
+        setInterval(() => {
+          contador++;
+          document.getElementById("resultado2").innerHTML = contador;
+        }, 1000);
+      }
+      document.getElementById("executar").onclick = exemplo; // Sem () da função
+    </script>
+  </body>
+</html>

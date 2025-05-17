@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo Promise</title>
+  </head>
+  <body>
+    <div>
+      <h1>Exemplo Promise</h1>
+      <button id="executar">Executar</button>
+    </div>
+    <div id="resultado1"></div>
+    <div id="resultado2"></div>
+    <div id="resultado3"></div>
+
+    <script>
+      let contador = 0;
+
+      function exemplo() {
+        document.getElementById("resultado2").innerHTML = contador;
+        const promiseDemorado = new Promise((resolve, reject) => {
+          // Loop demorado - 5 segundos
+          let start = new Date().getTime();
+          let end = start;
+          while (end < start + 5000) {
+            end = new Date().getTime();
+          }
+          document.getElementById("resultado3").innerHTML = "MENSAGEM XXXXXXXXXXX";
+          reject('ERRO NO PROMISE');
+        });
+        promiseDemorado.then(() => alert('Terminou funcao demorada')).catch((erro) => alert(erro));
+
+        setInterval(() => {
+          contador++;
+          document.getElementById("resultado2").innerHTML = contador;
+        }, 1000);
+      }
+      document.getElementById("executar").onclick = exemplo; // Sem () da função
+    </script>
+  </body>
+</html>

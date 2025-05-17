@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exemplos Javascript</title>
+</head>
+<body>
+  <div>
+    <h1>Exemplo Fetch</h1>
+    <button id="executar">Executar</button>
+  </div>
+  <div id="resultado"> </div> <!-- SAÍDA -->
+
+  <script>
+    function requisicaoAssincrona() {
+
+      // RODAR TELA COM EXTENSAO LIVE SERVER DO VSCODE PARA FUNCIONAR
+      fetch('./dados.json').then((httpResp) => {
+        if (!httpResp.ok) {
+          // ERRO HTTP
+          return;
+        }
+        httpResp.json().then(dados => {
+          const dadosHtml = `<h2>${dados.nome}</h2>
+          <p>${dados.texto}</p>`
+          document.getElementById('resultado').innerHTML = dadosHtml;
+        });
+      });
+
+    }
+    document.getElementById('executar').onclick = requisicaoAssincrona; // Sem () da função
+  </script>
+</body>
+</html>
